@@ -7,3 +7,4 @@ dist/
 build/
 .swc/
 *.tsbuildinfo
+backend/.env
