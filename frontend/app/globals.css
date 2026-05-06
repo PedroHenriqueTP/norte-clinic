@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -29,46 +29,33 @@
 
 @layer base {
   :root {
-    /* Norte Clean: Emerald & Orange Foundation */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+  --background: #0A0A0A; /* Obsidian Deep */
+  --foreground: #F5F5F7;
+  --primary: #00F2FF;    /* Cyan Neon */
+  --secondary: #10B981;  /* Emerald Neon */
+  --accent: #00F2FF;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 0.75rem;
+}
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+}
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+}
 
-    /* Vibrancy: Emerald & Orange */
-    --primary: 161 94% 30%; /* Emerald-600 */
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 24 95% 53%; /* Orange-500 */
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 161 94% 30%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 161 94% 30%;
-
-    --radius: 0.5rem;
-
-    /* Sidebar Specific */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222.2 84% 4.9%;
-    --sidebar-primary: 161 94% 30%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 96.1%;
-    --sidebar-border: 214.3 31.8% 91.4%;
-  }
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: var(--radius);
+}
 
   * {
     @apply border-border outline-ring/50;
@@ -129,3 +116,4 @@ body {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
+
